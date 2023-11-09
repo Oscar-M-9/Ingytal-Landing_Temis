@@ -1,5 +1,6 @@
 html, body{
     font-family: NeurialGrotesk, sans-serif !important;
+    overflow-x: hidden;
 }
 
 p{
@@ -500,4 +501,13 @@ p{
 
 .dropdown-item.active, .dropdown-item:active {
     background-color: #FFCF40 !important;
+}
+
+footer{
+    height: auto;
+    background-color: #0A2E4D;
+}
+
+.img-logo img{
+    width: 70px;
 }
