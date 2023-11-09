@@ -36,9 +36,9 @@ $(document).ready(function () {
 
     if ($(window).width() > 990) {
         $(".dropdown").hover(function() {
-            $(this).find(".dropdown-menu").show();
+            $(this).find(".dropdown-menu").show().addClass("animate__animated animate__zoomIn animate__faster").removeClass("animate__zoomOut");
         }, function() {
-            $(this).find(".dropdown-menu").hide();
+            $(this).find(".dropdown-menu").hide().addClass("animate__animated animate__zoomOut").removeClass("animate__zoomIn");
         });
     } else {
         $(".dropdown").unbind("hover");
