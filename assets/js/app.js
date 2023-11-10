@@ -28,12 +28,6 @@ $(document).ready(function () {
         ]
     });
 
-    // $(".dropdown").hover(function() {
-    //     $(this).find(".dropdown-menu").show();
-    // }, function () {
-    //     $(this).find(".dropdown-menu").hide();
-    // });
-
     if ($(window).width() > 990) {
         $(".dropdown").hover(function() {
             $(this).find(".dropdown-menu").show().addClass("animate__animated animate__zoomIn animate__faster").removeClass("animate__zoomOut");
@@ -43,4 +37,17 @@ $(document).ready(function () {
     } else {
         $(".dropdown").unbind("hover");
     }
+
+    $("#btn-video-yt").click(function () {
+        $("#container-video-yt").empty();
+        const iframeYT = `<iframe class="youtube-iframe" width="100%" height="100%" src="https://www.youtube.com/embed/LwGEP6cJf28?autoplay=1&rel=0&enablejsapi=1" title="Bienvenido a Temis Perú" autoplay="true" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+        $("#container-video-yt").html(iframeYT);
+        
+    });
+
+    // $("#btn-video-yt").hover(function () {
+    //     $(this).addClass("animate__animated animate__zoomIn");
+    // }, function (){
+    //     $(this).removeClass("animate__animated animate__zoomIn");
+    // })
 })
