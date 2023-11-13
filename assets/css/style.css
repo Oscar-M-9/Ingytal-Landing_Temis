@@ -450,13 +450,16 @@ p{
 
 @media (min-width: 1024px) and  (max-width: 1400px) {
     .comment-container{
-        width: 300px;
+        width: 285px;
+    }
+    .comment-text{
+        font-size: 1.05rem;
     }
 }
 
 @media (min-width: 780px) and  (max-width: 1024px) {
     .comment-container{
-        width: 260px;
+        width: 245px;
     }
     .comment-text{
         font-size: 15px;
