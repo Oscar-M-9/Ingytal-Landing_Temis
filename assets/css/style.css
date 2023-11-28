@@ -613,7 +613,7 @@ p{
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-    background-color: #fff2cc61 !important;
+    background-color: #fff2cc95 !important;
 }
 
 .dropdown-item.active, .dropdown-item:active {
