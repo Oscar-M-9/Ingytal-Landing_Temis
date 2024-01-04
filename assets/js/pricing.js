@@ -17,21 +17,21 @@ $(document).ready(function () {
     const priceMensual = [600, 1200]
     const priceMensualTached = [900, 1800]
 
-    $('#switch-price').change(function() {
-        if ($(this).is(':checked')) {
-            // console.log('El switch está activado');
-            $("#price-basico").text(priceMensual[0]);
-            $("#price-basico-old").text('S/ '+ priceMensualTached[0]);
-            $("#price-intermedio").text(priceMensual[1]);
-            $("#price-intermedio-old").text('S/ '+ priceMensualTached[1]);
-            // Realiza acciones si el switch está activado
-        } else {
-            $("#price-basico").text(priceAnual[0]);
-            $("#price-basico-old").text('S/ '+ priceAnualTached[0]);
-            $("#price-intermedio").text(priceAnual[1]);
-            $("#price-intermedio-old").text('S/ '+ priceAnualTached[1]);
-        }
-    });
+    // $('#switch-price').change(function() {
+    //     if ($(this).is(':checked')) {
+    //         // console.log('El switch está activado');
+    //         $("#price-basico").text(priceMensual[0]);
+    //         $("#price-basico-old").text('S/ '+ priceMensualTached[0]);
+    //         $("#price-intermedio").text(priceMensual[1]);
+    //         $("#price-intermedio-old").text('S/ '+ priceMensualTached[1]);
+    //         // Realiza acciones si el switch está activado
+    //     } else {
+    //         $("#price-basico").text(priceAnual[0]);
+    //         $("#price-basico-old").text('S/ '+ priceAnualTached[0]);
+    //         $("#price-intermedio").text(priceAnual[1]);
+    //         $("#price-intermedio-old").text('S/ '+ priceAnualTached[1]);
+    //     }
+    // });
 
     
     
