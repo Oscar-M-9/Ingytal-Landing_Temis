@@ -223,7 +223,7 @@
                 <label for="inputMensaje" class="form-label" style="color: white;">Mensaje</label>
                 <textarea class="form-control" id="inputMensaje"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" class="btn btn-primary rounded-pill px-4">Enviar</button>
             </form>
           </div>
         </div>
@@ -501,7 +501,7 @@
                 Descubre como Temis puede transformar tu gestión legal
               </h1>
               <div data-aos="fade-right" class="container-fluid px-lg-0 p-2">
-                <a class="btn btn-nav btn-primary rounded-pill mt-3" href="https://wa.me/51979249947">
+                <a class="btn btn-nav btn-primary rounded-pill mt-3" href="#">
                   ¿Tienes Más Preguntas? 
                 </a>
               </div>
@@ -641,7 +641,10 @@
             method: "POST",
             body: formData
           })
-            .then((response) => console.log("success: ", response));
+            .then((response) => response.json())
+            .then((data) => {
+              form.innerHTML = data.respuesta;
+            });
         }
 
       });

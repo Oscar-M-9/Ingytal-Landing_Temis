@@ -14,27 +14,27 @@ $secret = ''; // reCAPTCHA secret key
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = sanitizeInput($_POST['name']);
     $email = sanitizeInput($_POST['email']);
-    $phone = $_POST['phone'];
+    $phone = sanitizeInput($_POST['phone']);
     $message = sanitizeInput($_POST['message']);
   
   
   if (empty($name)) {
     $errors[] = 'Name is empty';
   }
+  if (empty($phone)) {
+    $errors[] = 'Celular está vacio';
+  }
   if (empty($email)) {
     $errors[] = 'Email is empty';
   }  else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'Email is invalid';
-  }
-  if (empty($message)) {
-    $errors[] = 'Message is empty';
   }
 
   if (!empty($errors)) {
     $allErrors = join('<br/>', $errors);
     $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
   } else {
-    $toEmail = $email;
+    $toEmail = 'alexgf2703@gmail.com';
     $emailSubject = 'Nuevo interesado de landing de Temis';
 
       // Create a new PHPMailer instance
@@ -54,16 +54,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->addAddress($toEmail);
             $mail->Subject = $emailSubject;
             $mail->isHTML(true);
-            $mail->Body = "<p>Name: {$name}</p><p>Email: {$email}</p><p>Message: {$message}</p>";
+            $mail->Body = "<p>Nombre: {$name}</p><p>Celular: {$phone}</p><p>Correo: {$email}</p><p>Mensaje: {$message}</p>";
 
             // Send the message
             $mail->send();
 
-            $successMessage = "<p style='color: green;'>Thank you for contacting us :)</p>";
-            return $successMessage;
+            $successMessage = "<p class='font-weight-600' style='color: white;font-size:20px;margin-top:50px;'>Muchas gracias por su mensaje, en breve nos estaremos contactando.</p>";
+            $data = array("respuesta" => $successMessage);
+            echo(json_encode($data));
+            exit();
         } catch (Exception $e) {
-            $errorMessage = "<p style='color: red;'>Oops, something went wrong. Please try again later</p>";
-            return $errorMessage;
+            $errorMessage = "<p class='font-weight-600 font-size-lg' style='color: red; font-size:20px;'>Hubo un error, por favor intentelo más tarde</p>";
+            echo($errorMessage);
     }
   }
 }
@@ -76,33 +78,3 @@ function sanitizeInput($input) {
 }
 
 ?>
-<!--
-<html>
-  <body>
-    <form action="mail_service.php"method="post" id="contact-form">
-      <h2>Contact us</h2>
-      <?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
-      <?php echo((!empty($successMessage)) ? $successMessage : '') ?>
-      <p>
-        <label>First Name:</label>
-        <input name="name" type="text" required />
-      </p>
-      <p>
-        <label>Email Address:</label>
-        <input style="cursor: pointer;" name="email" type="email" required />
-      </p>
-      <p>
-        <label>Message:</label>
-        <textarea name="message" required></textarea>
-      </p>
-      <p>
-        <button
-        >
-          Submit
-        </button>
-      </p>
-    </form>
-
-  </body>
-</html>
--->
