@@ -140,6 +140,11 @@ p {
   font-weight: 600 !important;
 }
 
+.sector-item-check {
+  color: #0a2e4d; 
+  margin-right:8px;
+}
+
 .btn-outline-primary {
   --bs-btn-color: #0a2e4d !important;
   --bs-btn-border-color: #0a2e4d !important;
@@ -273,8 +278,8 @@ p {
 }
 
 .container-yt-embed {
-  width: 90%;
-  height: 320px;
+  width: 580px;
+  height: 326px;
   position: relative;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -404,17 +409,17 @@ p {
   -o-border-radius: 10px;
 }
 .logo-item-service {
-  width: 280px;
+  width: 330px;
   height: 200px;
-  /* background-color: #ccc; */
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
+  /* background-color: #ccc;
+  border-radius: 10px;   
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  -o-border-radius: 10px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: white;
 }
 
 .logo-item-service img {
@@ -742,4 +747,34 @@ footer {
   .dropdown-menu-soluciones {
     min-width: max-content !important;
   }
+}
+
+.skewed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hero-background2.jpg');
+  opacity: 0.6;
+  z-index: -9999;
+  /*background-color: rgba(25, 81, 130, 0.8);*/
+}
+
+.skewed2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 46, 77, 0.75);
+  z-index: -999;
+}
+
+ul li i {
+  color: #0a2e4d;
 }
