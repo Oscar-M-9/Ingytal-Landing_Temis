@@ -191,7 +191,7 @@
               <div class="d-flex flex-row pt-2">
                 <a
                   class="btn btn-nav btn-secondary rounded-pill mx-1 py-2"
-                  href="#"
+                  href="https://wa.me/51979249947"
                   target="_blank"
                   >Agendar Demo</a
                 >
@@ -203,9 +203,28 @@
             </div>
           </div>
         </div>
-        <div data-aos="fade-left" class="col-md-6 px-0 mt-4 mt-lg-5">
+        <div data-aos="fade-left" class="col-md-4 px-0 mt-4 mt-lg-5">
           <div class="container-fluid p-4 justify-content-center d-flex">
-           
+            <form id="form_envio_mensaje">
+              <h1 class="font-weight-600 font-size-lg" style="color: white;">Contactanos</h1>
+              <div class="mb-3">
+                <label for="inputName" class="form-label" style="color: white;">* Nombre</label>
+                <input type="text" class="form-control" id="inputName">
+              </div>
+              <div class="mb-3">
+                <label for="inputPhone" class="form-label" style="color: white;">* Celular</label>
+                <input type="text" class="form-control" id="inputPhone">
+              </div>
+              <div class="mb-3">
+                <label for="inputEmail" class="form-label" style="color: white;">Correo</label>
+                <input type="text" class="form-control" id="inputEmail">
+              </div>
+              <div class="mb-3">
+                <label for="inputMensaje" class="form-label" style="color: white;">Mensaje</label>
+                <textarea class="form-control" id="inputMensaje"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
           </div>
         </div>
       </section>
@@ -482,7 +501,7 @@
                 Descubre como Temis puede transformar tu gestión legal
               </h1>
               <div data-aos="fade-right" class="container-fluid px-lg-0 p-2">
-                <a class="btn btn-nav btn-primary rounded-pill mt-3" href="#contacto">
+                <a class="btn btn-nav btn-primary rounded-pill mt-3" href="https://wa.me/51979249947">
                   ¿Tienes Más Preguntas? 
                 </a>
               </div>
@@ -596,5 +615,36 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+
+    <script>
+      let form = document.getElementById("form_envio_mensaje");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        let name = document.getElementById("inputName");
+        let phone =  document.getElementById("inputPhone");
+        let email =  document.getElementById("inputEmail");
+        let message =  document.getElementById("inputMensaje");
+
+        if(name.value == "" || phone.value == "")
+        {
+          console.log("error");
+        }
+        else {
+          let formData = new FormData();
+          formData.append("name", name.value);
+          formData.append("phone", phone.value);
+          formData.append("email", email.value);
+          formData.append("message", message.value);
+
+          fetch("mail_service.php", {
+            method: "POST",
+            body: formData
+          })
+            .then((response) => console.log("success: ", response));
+        }
+
+      });
+    </script>
   </body>
 </html>
