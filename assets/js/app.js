@@ -28,6 +28,7 @@ $(document).ready(function () {
         ]
     });
 
+    /*
     if ($(window).width() > 990) {
         $(".dropdown").hover(function() {
             $(this).find(".dropdown-menu").show().addClass("animate__animated animate__zoomIn animate__faster").removeClass("animate__zoomOut");
@@ -37,6 +38,7 @@ $(document).ready(function () {
     } else {
         $(".dropdown").unbind("hover");
     }
+    */
 
     $("#btn-video-yt").click(function () {
         $("#container-video-yt").empty();
