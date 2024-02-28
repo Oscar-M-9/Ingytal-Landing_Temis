@@ -747,6 +747,21 @@ footer {
   .dropdown-menu-soluciones {
     min-width: max-content !important;
   }
+
+  #buttons-hero {
+    justify-content: center;
+  }
+  
+}
+
+@media (min-width: 250px) and (max-width: 425px) {
+  .skewed {
+    transform: scale(3);
+  }
+
+  .skewed2 {
+    transform: scale(3);
+  }
 }
 
 .skewed {
