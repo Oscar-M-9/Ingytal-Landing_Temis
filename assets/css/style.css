@@ -793,3 +793,12 @@ footer {
 ul li i {
   color: #0a2e4d;
 }
+
+.link-active{
+  font-weight: bold;
+  
+}
+
+.link-active .nav-link{
+  color: #0d365b !important;
+}
