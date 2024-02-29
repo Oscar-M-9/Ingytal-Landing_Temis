@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $allErrors = join('<br/>', $errors);
     $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
   } else {
-    $toEmail = 'alexgf2703@gmail.com';
+    $toEmail = 'Mcmanolito@gmail.com';
     $emailSubject = 'Nuevo interesado de landing de Temis';
 
       // Create a new PHPMailer instance
