@@ -743,6 +743,16 @@ footer {
   min-width: 460px !important;
 }
 
+@media (min-width:750px) and (max-width: 1430px) {
+  .skewed {
+    transform: scaley(1.5) !important;
+  }
+
+  .skewed2 {
+    transform: scaley(1.5) !important;
+  }
+}
+
 @media (min-width: 250px) and (max-width: 990px) {
   .dropdown-menu-soluciones {
     min-width: max-content !important;
@@ -751,16 +761,21 @@ footer {
   #buttons-hero {
     justify-content: center;
   }
+
+  #logo-temis {
+    width: 140px;
+    height: auto;
+  }
   
 }
 
-@media (min-width: 250px) and (max-width: 425px) {
+@media (min-width: 250px) and (max-width: 660px) {
   .skewed {
-    transform: scale(3);
+    transform: scaley(3) !important;
   }
 
   .skewed2 {
-    transform: scale(3);
+    transform: scaley(3) !important;
   }
 }
 
@@ -775,6 +790,7 @@ footer {
   background-image: url('../images/hero-background2.jpg');
   opacity: 0.6;
   z-index: -9999;
+  transform: scaleY(1.1);
   /*background-color: rgba(25, 81, 130, 0.8);*/
 }
 
@@ -788,6 +804,7 @@ footer {
   height: 100%;
   background-color: rgba(10, 46, 77, 0.75);
   z-index: -999;
+  transform: scaleY(1.1);
 }
 
 ul li i {

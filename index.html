@@ -79,7 +79,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow-sm py-3">
       <div class="container-fluid">
         <a class="navbar-brand ms-lg-5 px-4" href="/">
-          <img src="assets/icons/Temis-15-15-2.png" alt="Logo LegalTech - Temis" height="40" />
+          <img id="logo-temis" src="assets/icons/Temis-15-15-2.png" alt="Logo LegalTech - Temis" height="40" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -156,8 +156,8 @@
             </div>
           </div>
         </div>
-        <div id="contactanos-section" data-aos="fade-left" class="col-md-4 px-0 pt-4 mt-lg-5">
-          <div class="container-fluid p-4 justify-content-center d-flex">
+        <div id="contactanos-section" data-aos="fade-left" class="col-md-5 px-0 pt-4 mt-lg-5">
+          <div id="formulario-contenedor" class="container-fluid p-4 justify-content-center d-flex">
             <form id="form_envio_mensaje">
               <h1 class="font-weight-600 font-size-lg" style="color: white;">Contactanos</h1>
               <div class="mb-3">
@@ -580,9 +580,19 @@
         let email =  document.getElementById("inputEmail");
         let message =  document.getElementById("inputMensaje");
 
+        const contenedor = document.getElementById("formulario-contenedor");
+        
+
         if(name.value == "" || phone.value == "")
         {
           console.log("error");
+          const messageE = document.createElement("p");
+          messageE.textContent = 'Por favor complete los campos con *';
+          messageE.classList.add("font-weight-600","font-size-sm");
+          messageE.style.color="#ffcf40";
+          messageE.style.fontSize ="20px";
+          
+          form.insertBefore(messageE, form.firstChild);
         }
         else {
           let formData = new FormData();
@@ -590,7 +600,10 @@
           formData.append("phone", phone.value);
           formData.append("email", email.value);
           formData.append("message", message.value);
-
+          
+          contenedor.style.height="500px";
+          form.innerHTML = '<div class="pt-5"><div class="spinner-border text-light" role="status"> <span class="visually-hidden">Loading...</span></div></div>';
+          
           fetch("mail_service.php", {
             method: "POST",
             body: formData
@@ -612,6 +625,6 @@
         });
       });
     </script>
-    
+
   </body>
 </html>
